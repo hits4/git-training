@@ -8,6 +8,16 @@ $ git clone https://github.com/schacon/ticgit
 
 
 ---
+## add
+
+・一度addしたものを取り消す。
+git reset HEAD ファイル名
+
+
+・ファイルへの変更の取り消し
+git checkout -- ファイル名
+
+
 ## コミット
 ### gitのcommitのやり直し(上書き)コマンド
 $ git commit --amend

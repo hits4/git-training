@@ -1,9 +1,6 @@
-# git-training
+## ãƒ¬ãƒã‚¸ãƒˆãƒªã®ä½œæˆ/ã‚¯ãƒ­ãƒ¼ãƒ³
 
-
-## ƒŒƒ|ƒWƒgƒŠ‚Ìì¬/ƒNƒ[ƒ“
-
-###ƒ[ƒJƒ‹‚ÉƒŒƒ|‚ğì‚é
+###ãƒ­ãƒ¼ã‚«ãƒ«ã«ãƒ¬ãƒã‚’ä½œã‚‹
 git init
 
 ###clone
@@ -11,47 +8,47 @@ $ git clone https://github.com/schacon/ticgit
 
 
 ---
-## ƒRƒ~ƒbƒg
-### git‚Ìcommit‚Ì‚â‚è’¼‚µ(ã‘‚«)ƒRƒ}ƒ“ƒh
+## ã‚³ãƒŸãƒƒãƒˆ
+### gitã®commitã®ã‚„ã‚Šç›´ã—(ä¸Šæ›¸ã)ã‚³ãƒãƒ³ãƒ‰
 $ git commit --amend
 
-### amend‚Ìg‚¢•û
+### amendã®ä½¿ã„æ–¹
 $ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend
 
 
-### add‚µ‚Äcommit
+### addã—ã¦commit
 git commit -a -m 'added new benchmarks'
 
-### ’ÇÕ‘ÎÛ‚©‚çíœ
+### è¿½è·¡å¯¾è±¡ã‹ã‚‰å‰Šé™¤
 git rm
 
-### ƒtƒ@ƒCƒ‹‚Íc‚µ‚Ä’ÇÕ‘Îˆ‚¤‚©‚çíœ
+### ãƒ•ã‚¡ã‚¤ãƒ«ã¯æ®‹ã—ã¦è¿½è·¡å¯¾å‡¦ã†ã‹ã‚‰å‰Šé™¤
 $ git rm --cached README
 
-## ƒŠƒ‚[ƒg‚Ì‘€ì
+## ãƒªãƒ¢ãƒ¼ãƒˆã®æ“ä½œ
 
 ## push 
 $ git push origin master
 
 ---
 
-## ƒ}[ƒW/·•ªŠÇ—
-GUI‚ÅdiffŒ©‚é
+## ãƒãƒ¼ã‚¸/å·®åˆ†ç®¡ç†
+GUIã§diffè¦‹ã‚‹
 $git difftool
 
-difftool‚Í.gitconfig‚Å‚ ‚ç‚©‚¶‚ßİ’è‚µ‚Ä‚¨‚­
+difftoolã¯.gitconfigã§ã‚ã‚‰ã‹ã˜ã‚è¨­å®šã—ã¦ãŠã
 
 --- 
-## ƒ†[ƒU[ŠÇ—‚ÆƒpƒXƒ[ƒh
+## ãƒ¦ãƒ¼ã‚¶ãƒ¼ç®¡ç†ã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 
-### u‘Šiî•ñƒ}ƒl[ƒWƒƒv‚Ì–³Œø‰»
-windows”Ågit‚Í”FØî•ñ‚ğwindows‚Ìu‘Šiî•ñƒ}ƒl[ƒWƒƒv‚ÅŠÇ—‚µ‚Ä‚µ‚Ü‚¤B
-‚±‚ê‚ª—LŒø‚¾‚ÆA.config‚Ìuserî•ñ‚ª–³‹‚³‚ê‚Ä‚µ‚Ü‚¤‚Ì‚ÅA–³Œø‚É‚·‚éB
+### ã€Œè³‡æ ¼æƒ…å ±ãƒãƒãƒ¼ã‚¸ãƒ£ã€ã®ç„¡åŠ¹åŒ–
+windowsç‰ˆgitã¯èªè¨¼æƒ…å ±ã‚’windowsã®ã€Œè³‡æ ¼æƒ…å ±ãƒãƒãƒ¼ã‚¸ãƒ£ã€ã§ç®¡ç†ã—ã¦ã—ã¾ã†ã€‚
+ã“ã‚ŒãŒæœ‰åŠ¹ã ã¨ã€.configã®useræƒ…å ±ãŒç„¡è¦–ã•ã‚Œã¦ã—ã¾ã†ã®ã§ã€ç„¡åŠ¹ã«ã™ã‚‹ã€‚
 git config --system -e
 
 https://qiita.com/tyori03/items/3cc2915f7429251eb908
 
-### ƒpƒXƒ[ƒh‚Ì•Û‘¶
+### ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®ä¿å­˜
 git config --global credential.helper store

@@ -1,0 +1,3 @@
+foo was modifyied in the test branch.
+
+this is editted by rebase-test branch.

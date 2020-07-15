@@ -154,12 +154,31 @@ brachとはコミットに対するポインタである。初期状態で作ら
     $ git checkout [branch-name]
 
 ### ブランチを作成 + 作成したブランチに切り替える(ショートハンド)
-    $ git checkout -b [branch-name]
+上記2つをまとめて実行してくれるショートハンド。
+    $ git checkout -b [branch-name] 
+
+### リモートのブランチを作成 + 作成したブランチに切り替える
+    $ git checkout -b [branch-name] [remotename]/[branch-name] 
+
+上記のショートハンド
+    $ git checkout --track [remotename]/[branch-name] 
+
+上記のさらにショートハンド。ローカルにない場合自動でチェックアウト
+    $ git checkout [branch-name]
+
+### 既に手元にあるローカルブランチを、リモートブランチにも作成
+    $ git branch -u [remotename]/[branch-name] 
+または
+    $ git branch --set-upstream-to [remotename]/[branch-name] 
 
 ### ブランチの削除
     $ git branch -d [branch-name]
-    
 
+### マージ済みブランチの表示
+    $ git branch --merged
+    
+### マージされていないブランチの表示
+   $ git branch --no-merged
 
 ---
 ## tagの操作
@@ -195,3 +214,15 @@ https://qiita.com/tyori03/items/3cc2915f7429251eb908
 
 ### パスワードの保存
 $ git config --global credential.helper store
+
+---
+
+## KEYWORDS/用語
+
+### masterとは
+デフォルトのブランチ名
+
+### originとは
+リモートサーバー名のデフォルト名
+
+すなわちorigin/masterとはデフォルトのリモートサーバー名のデフォルトブランチを指している。

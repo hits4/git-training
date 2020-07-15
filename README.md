@@ -148,10 +148,17 @@ brachとはコミットに対するポインタである。初期状態で作ら
 (HEAD == 現在の作業ブランチ == 現在のコミット)
 
 ### ローカルレポジトリにbranchを作成する
-    $ git branch [ブランチ名]
+    $ git branch [branch-name]
 
 ### ワーキングディレクトリを任意のbranchに切り替える
     $ git checkout [branch-name]
+
+### ブランチを作成 + 作成したブランチに切り替える(ショートハンド)
+    $ git checkout -b [branch-name]
+
+### ブランチの削除
+    $ git branch -d [branch-name]
+    
 
 
 ---

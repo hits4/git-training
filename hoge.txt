@@ -1,4 +1,2 @@
-hogehoge
-new line.
-add 3rd line.
-here is new line by vim.
+this file may cause conflict.
+editited by test branch.

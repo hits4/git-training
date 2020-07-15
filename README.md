@@ -18,34 +18,68 @@ https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
     $ git push -u origin master
 
 ---
-## add
 
-・一度addしたものを取り消す。
-git reset HEAD ファイル名
+## ステージング
 
+### add 
+    $ git add [file]
 
-・ファイルへの変更の取り消し
-git checkout -- ファイル名
+### すべてのmodifiedをadd
+    $ git add -u
 
+### すべてのファイルをadd
+    $ git add -A
+
+### カレントディレクトリをすべてadd
+    $ git add .
+
+### stagedからmodifiedに戻す
+    $ git reset [file]
+
+### 一度stagedしたものをHEADの状態に戻す
+    $ git reset HEAD [file]
+
+### 追跡対象(tracked)から削除(ファイルも削除)
+    $ git rm [file]
+
+### 追跡対象(tracked)から削除(ファイルは残る)
+    $ git rm --cached [file]
+
+---
 
 ## コミット
-### gitのcommitのやり直し(上書き)コマンド
-$ git commit --amend
-
-### amendの使い方
-$ git commit -m 'initial commit'
-$ git add forgotten_file
-$ git commit --amend
-
 
 ### addしてcommit
-git commit -a -m 'added new benchmarks'
+git commit -a -m [message]
 
-### 追跡対象から削除
-git rm
+### gitのcommitのやり直し(上書き)コマンド
+    $ git commit --amend
 
-### ファイルは残して追跡対処うから削除
-$ git rm --cached README
+### amendの一連の使い方
+    $ git commit -m 'initial commit'
+    $ git add forgotten_file
+    $ git commit --amend -m [new-message]
+
+---
+
+## チェックアウト
+
+### チェックアウト
+    $ git checkout [branchname]
+
+### ブランチ作成 + チェックアウト
+    $ git checkout -b [branchname]
+
+### 特定のコミットからブランチ作成 + チェックアウト
+    $ git checkout -b [branchname] [commit-id]
+
+### 再チェックアウト(ファイルへの変更を戻す)
+    $ git checkout -- [file]
+
+
+
+
+
 
 # リモートの操作
 

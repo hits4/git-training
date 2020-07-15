@@ -14,7 +14,7 @@ https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
     $ git branch -a
 
 ### [履歴] 現在のブランチの履歴	
-    $ git log
+    $ git log --oneline
 
 
 ---

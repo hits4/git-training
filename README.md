@@ -2,13 +2,20 @@
 https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
 
 
-## レポジトリの作成/クローン
+# レポジトリの作成/クローン
 
-### ローカルにレポを作る
-git init
+## ローカルにレポを作る
+``` git init
 
-### clone
-$ git clone https://github.com/schacon/ticgit
+## 既にあるレポをcloneする
+$ git clone [URL]
+
+## ローカルに作ったレポをremoteにプッシュする一連の操作
+$ git init
+$ git add -A
+$ git commit -m "init"
+$ git remote add origin [url]
+$ git push -u origin master
 
 
 ---
@@ -63,12 +70,26 @@ $ git push origin master
 上記の省略形として
 $ git push
 
+---
+
+# tagの操作
+
+## tagの表示
+$ git tag
+
+## tagを作る
+$ git tag -a [tag-name] -m [message]
+
+## tagをpushする(要コミット)
+$ git push [remote-name]--tags
+上記の省略形
+$ git push --tags
 
 ---
 
 ## マージ/差分管理
 GUIでdiff見る
-$git difftool
+$ git difftool
 
 difftoolは.gitconfigであらかじめ設定しておく
 

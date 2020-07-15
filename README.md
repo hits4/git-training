@@ -5,7 +5,7 @@ https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
 # レポジトリの作成/クローン
 
 ## ローカルにレポを作る
-``` git init
+``` git init ```
 
 ## 既にあるレポをcloneする
 $ git clone [URL]

@@ -1,9 +1,13 @@
+## gitチートシート
+https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
+
+
 ## レポジトリの作成/クローン
 
-###ローカルにレポを作る
+### ローカルにレポを作る
 git init
 
-###clone
+### clone
 $ git clone https://github.com/schacon/ticgit
 
 

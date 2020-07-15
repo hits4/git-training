@@ -1,7 +1,7 @@
-Egit‚Ìcommit‚Ì‚â‚è’¼‚µƒRƒ}ƒ“ƒh
+ãƒ»gitã®commitã®ã‚„ã‚Šç›´ã—ã‚³ãƒãƒ³ãƒ‰
 $ git commit --amend
 
-Eamend‚Ìg‚¢•û
+ãƒ»amendã®ä½¿ã„æ–¹
 $ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend

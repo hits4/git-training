@@ -123,17 +123,6 @@ git commit -a -m [message]
 ### リモートからのフェッチ(リモートの「master」ブランチ → ローカルの「origin/master」ブランチ)
     $ git fetch [remote-name]
 
-### origin/masterの内容をローカルmasterにマージ(ローカルの「origin/master」ブランチ → ローカルの「master」ブランチ)
-    $ git merge
-フェッチとマージの一連の流れ
-    $ git fetch origin master
-    $ git merge origin/master    
-
-### リモートからのプル(== fetch + mergge)
-    $ git pull 
-
-参考: [fetch, merge, pullについて]https://qiita.com/wann/items/688bc17460a457104d7d
-
 ### push 
     $ git push origin master
 
@@ -141,6 +130,7 @@ git commit -a -m [message]
     $ git push
 
 ---
+
 ## branch
 
 brachとはコミットに対するポインタである。初期状態で作られるmasterもbranchである。
@@ -174,11 +164,51 @@ brachとはコミットに対するポインタである。初期状態で作ら
 ### ブランチの削除
     $ git branch -d [branch-name]
 
+### リモートブランチの削除
+    $ git push [remotename] --delete [branch-name]
+
+----
+## merge / fetch / pull
+fetch : /origin/masterに情報を取得する。ローカルへのマージはしない。
+merge : fetchした情報をマージする。マージ時はどうもcommitがされるようだ。
+
+### origin/masterの内容をローカルmasterにマージ(ローカルの「origin/master」ブランチ → ローカルの「master」ブランチ)
+    $ git merge origin/master    
+上記のショートハンド
+    $ git merge
+
+リモートからフェッチ情報をローカルにマージする場合は次の手順となる。
+    $ git fetch origin master
+    $ git merge origin/master    
+
+### リモートからのプル(== fetch + mergge)
+    $ git pull 
+
+参考: [fetch, merge, pullについて]https://qiita.com/wann/items/688bc17460a457104d7d
+
 ### マージ済みブランチの表示
     $ git branch --merged
     
 ### マージされていないブランチの表示
    $ git branch --no-merged
+
+---
+## rebase
+マージと同等の事を行う方法としてrebaseがある。
+マージとの違いはヒストリのラインが一本化されて美しく見える。変更履歴の直列化といえる。
+rebaseは差分パッチを取得し、それを適用する。
+https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E6%A9%9F%E8%83%BD-%E3%83%AA%E3%83%99%E3%83%BC%E3%82%B9
+
+rebaseはリモート(公開repo)に対して使わない方がいいっぽい。
+プッシュする前の作業をきれいに整理する手段としてだけリベースを使い、まだ公開していないコミットだけをリベースすることを心がけていれば、何も問題はありません。
+
+## リベース
+ブランチの内容をmasterにリベースする場合    
+    $ git checkout [branch-name]
+    $ git rebase master
+
+    $ git checkout master
+    $ git merge [branch-name]
 
 ---
 ## tagの操作

@@ -8,7 +8,7 @@ https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
 ``` git init ```
 
 ## 既にあるレポをcloneする
-$ git clone [URL]
+    $ git clone [URL]
 
 ## ローカルに作ったレポをremoteにプッシュする一連の操作
 $ git init

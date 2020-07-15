@@ -274,7 +274,12 @@ n個前のコミットをリセット
     $ git rebase -i [修正する範囲]
     $ git rebase -i HEAD~~
 
-    
+### merge時にコミットをひとつにまとめる(squash)
+・トピックブランチ中のコミットを一つにまとめて統合ブランチに統合する時などに使う。
+
+    $ git merge --squash [branch-name]
+
+
 --- 
 ## ユーザー管理とパスワード
 

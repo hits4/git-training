@@ -2,21 +2,20 @@
 https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
 
 
-# レポジトリの作成/クローン
+## レポジトリの作成/クローン
 
-## ローカルにレポを作る
-``` git init ```
+### ローカルにレポを作る
+    git init
 
-## 既にあるレポをcloneする
+### 既にあるレポをcloneする
     $ git clone [URL]
 
-## ローカルに作ったレポをremoteにプッシュする一連の操作
-$ git init
-$ git add -A
-$ git commit -m "init"
-$ git remote add origin [url]
-$ git push -u origin master
-
+### ローカルに作ったレポをremoteにプッシュする一連の操作
+    $ git init
+    $ git add -A
+    $ git commit -m "init"
+    $ git remote add origin [url]
+    $ git push -u origin master
 
 ---
 ## add

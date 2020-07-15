@@ -73,10 +73,10 @@ git commit -a -m [message]
 ### 特定のコミットからブランチ作成 + チェックアウト
     $ git checkout -b [branchname] [commit-id]
 
-### 再チェックアウト(ファイルへの変更を戻す)
+### 任意のファイルを指定してチェックアウト(ファイルへの変更を戻す)
     $ git checkout -- [file]
 
-
+---
 
 
 

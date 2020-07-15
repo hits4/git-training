@@ -2,6 +2,34 @@
 https://qiita.com/TaaaZyyy/items/b2b68aec99789374a204
 
 
+## 状態の確認
+
+### staged / modified / untracked の一覧	
+    $ git status
+
+### ローカルブランチの一覧	
+    $ git branch
+
+### ローカルブランチとリモート追跡ブランチの一覧	
+    $ git branch -a
+
+### [履歴] 現在のブランチの履歴	
+    $ git log
+
+
+---
+
+## マージ/差分管理
+
+### [差分] ワーキングディレクトリ と ステージングエリア の差分を表示
+    $ git diff
+
+### GUIでdiff見る
+    $ git difftool
+
+※difftoolは.gitconfigであらかじめ設定しておく
+
+---- 
 ## レポジトリの作成/クローン
 
 ### ローカルにレポを作る
@@ -78,63 +106,85 @@ git commit -a -m [message]
 
 ---
 
+## リモートの操作
 
+### リモートレポジトリの一覧
+    $ git remote
 
+### リモートレポジトリの追加
+    $ git remote add [remote-name] URL
 
-# リモートの操作
+### リモートレポジトリの削除
+    $ git remote rm [remote-name]
 
-## リモートレポジトリの追加
-$ git remote add [remote-name] URL
+### リモートレポジトリのリネーム
+    $ git remote rename [old-remote-name] [new-remote-name]
 
-## リモートレポジトリの削除
-$ git remote rm [remote-name]
+### リモートからのフェッチ(リモートの「master」ブランチ → ローカルの「origin/master」ブランチ)
+    $ git fetch [remote-name]
 
-## リモートレポジトリのリネーム
-$ git remote rename [old-remote-name] [new-remote-name]
+### origin/masterの内容をローカルmasterにマージ(ローカルの「origin/master」ブランチ → ローカルの「master」ブランチ)
+    $ git merge
+フェッチとマージの一連の流れ
+    $ git fetch origin master
+    $ git merge origin/master    
 
-## リモートからのフェッチ(マージしない)
-$ git fetch [remote-name]
+### リモートからのプル(== fetch + mergge)
+    $ git pull 
 
-## リモートからのプル(マージする)
-$ git pull 
+参考: [fetch, merge, pullについて]https://qiita.com/wann/items/688bc17460a457104d7d
 
-## push 
-$ git push origin master
+### push 
+    $ git push origin master
+
 上記の省略形として
-$ git push
+    $ git push
 
 ---
+## branch
 
-# tagの操作
+brachとはコミットに対するポインタである。初期状態で作られるmasterもbranchである。
+また、 HEADは現在のワーキングディレクトリを指すためのbranchへのポインタといえる。
+(HEAD == 現在の作業ブランチ == 現在のコミット)
 
-## tagの表示
-$ git tag
+### ローカルレポジトリにbranchを作成する
+    $ git branch [ブランチ名]
 
-## tagを作る
-$ git tag -a [tag-name] -m [message]
+### ワーキングディレクトリを任意のbranchに切り替える
+    $ git checkout [branch-name]
 
-## tagをpushする(要コミット)
-$ git push [remote-name]--tags
+
+---
+## tagの操作
+
+### tagの表示
+    $ git tag
+
+### tagを作る
+    $ git tag -a [tag-name] -m [message]
+
+### tagをpushする(要コミット)
+    $ git push [remote-name]--tags
 上記の省略形
-$ git push --tags
+    $ git push --tags
 
----
-
-## マージ/差分管理
-GUIでdiff見る
-$ git difftool
-
-difftoolは.gitconfigであらかじめ設定しておく
 
 --- 
 ## ユーザー管理とパスワード
 
+### ユーザー名、emailなどの設定
+$ git config --[system/global/local] user.name ["ユーザー名"]
+$ git config --[system/global/local] user.email ["ユーザー名"]
+
+### git configをコマンドラインで編集
+$ git config --[system/global/local] -e
+
 ### 「資格情報マネージャ」の無効化
 windows版gitは認証情報をwindowsの「資格情報マネージャ」で管理してしまう。
 これが有効だと、.configのuser情報が無視されてしまうので、無効にする。
-git config --system -e
+$ git config --system -e
 
 https://qiita.com/tyori03/items/3cc2915f7429251eb908
 
 ### パスワードの保存
-git config --global credential.helper store
+$ git config --global credential.helper store

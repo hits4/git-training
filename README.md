@@ -41,10 +41,28 @@ git rm
 ### ファイルは残して追跡対処うから削除
 $ git rm --cached README
 
-## リモートの操作
+# リモートの操作
+
+## リモートレポジトリの追加
+$ git remote add [remote-name] URL
+
+## リモートレポジトリの削除
+$ git remote rm [remote-name]
+
+## リモートレポジトリのリネーム
+$ git remote rename [old-remote-name] [new-remote-name]
+
+## リモートからのフェッチ(マージしない)
+$ git fetch [remote-name]
+
+## リモートからのプル(マージする)
+$ git pull 
 
 ## push 
 $ git push origin master
+上記の省略形として
+$ git push
+
 
 ---
 

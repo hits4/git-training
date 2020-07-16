@@ -1,3 +1,4 @@
-foo was modifyied in the test branch.
+this file was editted by git-reset.
 
-this is editted by rebase-test branch.
+coult it merge to git-training?
+

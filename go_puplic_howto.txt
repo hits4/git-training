@@ -1,0 +1,83 @@
+ax向け公開手順
+
+公開用branchを作る。このとき初期状態のcommitをstart-pointにする
+$ git branch ax 9a53c36
+$ git checkout ax
+$ git merge --squash master 
+$ git add -A
+$ git commit -m 'message'
+$ git push
+
+とりあえずここまででhistoryを消したブランチは作れた。
+
+※このあとgit merge masterしてはいけない。やるとmasterのhistoryがすべてmergeされる。
+
+-------------------------------
+[TRY1: 新規で同じ内容のレポを作ったパターン]
+異なるレポジトリ間でもマージはできそう。
+新規でレポ作って、この手順でいいのかも？
+
+https://qiita.com/neonankiti/items/60ce9a0c018fd3e9b7d9
+
+コミットの範囲を指定するときはダブルドット記法が使えるらしい
+A..E
+https://qiita.com/snaka/items/39055dab9041152fed77
+
+[手順]
+1, レポAをgit clone
+2, .gitを削除 <- 削除はNGぽい。コミットを消す
+3, git init 
+$ git add -A
+$ git commit -m "init"
+$ git remote add origin [url]
+$ git push -u origin master
+
+3, 新規レポBに変更を加える
+git remote add git-copy https://hits4@github.com/hits4/git-copy
+git fetch --prune git-copy
+git merge git-copy/masster  <- ここでエラー。新規でレポを作っているのがいけないみたい。merge: git-copy/masster - not something we can merge
+
+4, Bの変更内容をAにマージしてみる
+
+------------------------
+
+[手順TRY2 checkout --orphanを使う方法]
+1, レポAをgit clone [url] [name]
+https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
+
+git checkout --orphan tmp
+git commit -m "Initial Commit"
+git checkout -B master
+git branch -d tmp
+
+$ git remote set-url <リポジトリの名前> <新しいリポジトリのURL>
+$ git push 
+
+# 異なるレポでマージしてみる
+# https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
+
+# 以下オリジナルレポに移動して作業
+git remote add git-fork https://hits4@github.com/hits4/git-fork
+git fetch --prune git-fork
+git merge git-copy/masster  <- ここでエラー。fatal: refusing to merge unrelated histories
+
+-----------------------------------------------------------------
+
+[TYR3 : reset を使ってみる]
+https://cm3.hateblo.jp/entry/2016/10/25/213008
+
+1, レポAをgit clone [url] [name]
+https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
+
+---------------------------------------------------
+[TYR4 : rebase を使ってみる]
+https://cm3.hateblo.jp/entry/2016/10/25/213008
+
+git reset --soft コミット <- これはHEADから指定コミット(の1つ前)まで消すという指示になる。
+$ git add .
+$ git commit -m 
+$ git remote set-url <リポジトリの名前> <新しいリポジトリのURL>
+$ git push 
+--------------------------------------
+コミット数
+ git log --pretty=format:'' | wc -l

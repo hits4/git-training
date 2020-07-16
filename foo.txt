@@ -1,0 +1,3 @@
+this file was editted by git-reset.
+
+coult it merge to git-training?

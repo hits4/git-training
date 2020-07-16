@@ -1,2 +1,2 @@
-hogehoge
-new line.
+create conflict line.
+edit by master.

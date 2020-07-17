@@ -69,15 +69,35 @@ https://cm3.hateblo.jp/entry/2016/10/25/213008
 1, レポAをgit clone [url] [name]
 https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
 
+git reset --soft コミット <- これはHEADから指定コミット(の1つ前)まで消すという指示になる。
+$ git add .
+$ git commit -m 'msg'
+$ git remote set-url origin <新しいリポジトリのURL>
+
+URLの確認
+$ git config --get remote.origin.url
+
+※リモートブランチは消す必要なかった
+
+$ git push 
+
+
+
+# 異なるレポでマージしてみる
+# https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
+
+# 以下オリジナルレポに移動して作業
+git remote add git-reset https://hits4@github.com/hits4/git-fork
+git fetch --prune git-reset
+git merge git-reset/masster  → 成功。コンフリクトする場合は修正する。
+
+# オリジナルのmasterのlogは保持される
+
+
 ---------------------------------------------------
 [TYR4 : rebase を使ってみる]
 https://cm3.hateblo.jp/entry/2016/10/25/213008
 
-git reset --soft コミット <- これはHEADから指定コミット(の1つ前)まで消すという指示になる。
-$ git add .
-$ git commit -m 
-$ git remote set-url <リポジトリの名前> <新しいリポジトリのURL>
-$ git push 
 --------------------------------------
 コミット数
  git log --pretty=format:'' | wc -l

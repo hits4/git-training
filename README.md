@@ -177,6 +177,9 @@ merge : fetchした情報をマージする。マージ時はどうもcommitが�
 上記のショートハンド
     $ git merge
 
+任意のコミットまでマージしたい場合は
+    $ git merge [commid-id]
+
 リモートからフェッチ情報をローカルにマージする場合は次の手順となる。
     $ git fetch origin master
     $ git merge origin/master    

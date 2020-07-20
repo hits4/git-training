@@ -283,7 +283,28 @@ n個前のコミットをリセット
     $ git merge --squash [branch-name]
 
 
---- 
+## Githubとの接続設定
+githubとの接続にはhttpsとssh接続(git@)が選べる。
+githubの推奨はhttps
+
+### 現在の接続設定を確認する
+    $ git remote -v
+
+### sshとhttpsを切り替える
+    $ git remote set-url HTTPSかSSHのURL
+
+### httpsでRepository not found.が出る場合
+結論 : 認証が通っていないから。以下のいずれかの形式にする必要がある。
+
+    https://{ユーザ名}:{パスワード}@github.com/ponsuke/repository.git
+
+二段階認証している場合
+
+    https://{ユーザ名}:{トークン}@github.com/ponsuke/repository.git
+
+トークンの取得方法等はこちらを参照
+https://qiita.com/ponsuke0531/items/4fe191b7bed03342cff2
+
 ## ユーザー管理とパスワード
 
 ### ユーザー名、emailなどの設定
@@ -303,7 +324,17 @@ https://qiita.com/tyori03/items/3cc2915f7429251eb908
 ### パスワードの保存
 $ git config --global credential.helper store
 
----
+## Github Desktopとgit bashについて
+sshを使っている場合、レポの場所は以下のようの記法になる。
+git@github.com:sdtechinc/sam-comperio.git
+
+configのurlが上記のようだと、 コンソールからは正しくアクセスできる。
+しかし、github desktopからはアクセスできない。
+github desktopからアクセスするにはURLをhttpsにしなくてはいけない。
+https://github.com/sdtechinc/sam-comperio.git
+
+つまり、今のところSSH利用前提であれば、
+両方を同時に使う事ができない。
 
 ## KEYWORDS/用語
 

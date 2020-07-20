@@ -13,7 +13,7 @@ $ git push
 ※このあとgit merge masterしてはいけない。やるとmasterのhistoryがすべてmergeされる。
 
 -------------------------------
-[TRY1: 新規で同じ内容のレポを作ったパターン]
+[TRY1 : 新規で同じ内容のレポを作ったパターン]
 異なるレポジトリ間でもマージはできそう。
 新規でレポ作って、この手順でいいのかも？
 
@@ -41,7 +41,7 @@ git merge git-copy/masster  <- ここでエラー。新規でレポを作って�
 
 ------------------------
 
-[手順TRY2 checkout --orphanを使う方法]
+[TRY2 : checkout --orphanを使う方法]
 1, レポAをgit clone [url] [name]
 https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
 
@@ -77,11 +77,9 @@ $ git remote set-url origin <新しいリポジトリのURL>
 URLの確認
 $ git config --get remote.origin.url
 
-※リモートブランチは消す必要なかった
+※リモートブランチは消す必要なかった。勝手に消える
 
 $ git push 
-
-
 
 # 異なるレポでマージしてみる
 # https://qiita.com/okashoi/items/6b1a8ca9a4b001200167
@@ -96,6 +94,7 @@ git merge git-reset/masster  → 成功。コンフリクトする場合は修�
 
 ---------------------------------------------------
 [TYR4 : rebase を使ってみる]
+TRY3が成功したので試していない。
 https://cm3.hateblo.jp/entry/2016/10/25/213008
 
 --------------------------------------
